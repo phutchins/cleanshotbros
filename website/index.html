@@ -289,26 +289,74 @@
   /* PRICING */
   #pricing {
     padding: 80px 40px;
-    max-width: 900px;
+    max-width: 1100px;
     margin: 0 auto;
+  }
+  .rate-bar {
+    display: flex;
+    gap: 2px;
+    margin-bottom: 48px;
+    background: var(--light-gray);
+    border: 2px solid var(--light-gray);
+  }
+  .rate-card {
+    flex: 1;
+    background: var(--navy);
+    padding: 28px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .rate-card.light {
+    background: var(--white);
+  }
+  .rate-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+  .rate-card.light .rate-label {
+    color: var(--gold-dark);
+  }
+  .rate-amount {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.6rem;
+    color: var(--white);
+    letter-spacing: 0.03em;
+    line-height: 1;
+  }
+  .rate-card.light .rate-amount {
+    color: var(--navy);
+  }
+  .rate-desc {
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.55);
+    line-height: 1.5;
+  }
+  .rate-card.light .rate-desc {
+    color: var(--gray);
+  }
+  .pricing-groups {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+  .pricing-group-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.3rem;
+    letter-spacing: 0.05em;
+    color: var(--navy);
+    margin-bottom: 2px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid var(--gold);
   }
   .pricing-table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 40px;
-    font-size: 0.93rem;
-  }
-  .pricing-table thead tr {
-    background: var(--navy);
-    color: var(--white);
-  }
-  .pricing-table thead th {
-    padding: 16px 24px;
-    text-align: left;
-    font-size: 0.75rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    font-weight: 600;
+    font-size: 0.88rem;
+    margin-bottom: 8px;
   }
   .pricing-table tbody tr {
     border-bottom: 1px solid var(--light-gray);
@@ -319,19 +367,148 @@
     background: #FEF9EF;
   }
   .pricing-table td {
-    padding: 18px 24px;
+    padding: 13px 16px;
     color: var(--navy);
   }
-  .pricing-table td:last-child {
+  .pricing-table td:first-child {
+    font-weight: 500;
+  }
+  .pricing-table td.size-col {
+    color: var(--gray);
+    font-size: 0.78rem;
+  }
+  .pricing-table td.price-col {
     font-weight: 700;
     color: var(--gold-dark);
+    white-space: nowrap;
+  }
+  .pricing-table td.mildew-col {
+    font-weight: 600;
+    color: var(--gray);
+    font-size: 0.82rem;
+    white-space: nowrap;
+  }
+  .pricing-table thead tr {
+    background: var(--off-white);
+  }
+  .pricing-table thead th {
+    padding: 9px 16px;
+    text-align: left;
+    font-size: 0.65rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--gray);
+  }
+  .bundle-box {
+    background: var(--navy);
+    padding: 28px 32px;
+    margin-top: 40px;
+  }
+  .bundle-box .pricing-group-title {
+    color: var(--white);
+    border-bottom-color: var(--gold);
+    margin-bottom: 16px;
+  }
+  .bundle-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .bundle-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    font-size: 0.88rem;
+    color: rgba(255,255,255,0.8);
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .bundle-list li:last-child { border-bottom: none; padding-bottom: 0; }
+  .bundle-list .bundle-price {
+    font-weight: 700;
+    color: var(--gold);
+    white-space: nowrap;
+  }
+  .bundle-list .bundle-save {
+    font-size: 0.72rem;
+    color: rgba(255,255,255,0.4);
+    margin-left: 8px;
   }
   .pricing-note {
-    margin-top: 20px;
+    margin-top: 24px;
     font-size: 0.82rem;
     color: var(--gray);
     line-height: 1.6;
   }
+
+  /* TESTIMONIALS */
+  #testimonials {
+    padding: 80px 40px;
+    background: var(--off-white);
+  }
+  .testimonials-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    margin-top: 48px;
+  }
+  .testimonial-card {
+    background: var(--white);
+    padding: 32px;
+    border-left: 4px solid var(--gold);
+    position: relative;
+  }
+  .testimonial-card::before {
+    content: '"';
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 5rem;
+    color: var(--gold);
+    opacity: 0.2;
+    position: absolute;
+    top: 8px;
+    left: 20px;
+    line-height: 1;
+  }
+  .testimonial-text {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--navy);
+    margin-bottom: 20px;
+    padding-top: 16px;
+  }
+  .testimonial-stars {
+    color: var(--gold);
+    font-size: 1rem;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+  }
+  .testimonial-author {
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gray);
+  }
+  .testimonial-note {
+    margin-top: 40px;
+    text-align: center;
+    font-size: 0.88rem;
+    color: var(--gray);
+    line-height: 1.6;
+  }
+  .testimonial-note a {
+    color: var(--gold-dark);
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .testimonial-note a:hover { text-decoration: underline; }
 
   /* CONTACT */
   #contact {
@@ -407,6 +584,7 @@
     <li><a href="#services">Services</a></li>
     <li><a href="#pricing">Pricing</a></li>
     <li><a href="#about">About</a></li>
+    <li><a href="#testimonials">Reviews</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
@@ -444,18 +622,8 @@
       <div class="service-desc">Monthly or one-time deep cleaning of your outdoor trash and recycling bins. No more smells, no mess for you.</div>
       <div class="service-price">From $15/can</div>
     </div>
-    <div class="service-card">
-      <span class="service-icon">🚗</span>
-      <div class="service-name">Car Washing</div>
-      <div class="service-desc">We come to you. Hand wash and rinse for a fresh, clean vehicle without leaving your driveway.</div>
-      <div class="service-price">From $25/vehicle</div>
-    </div>
-    <div class="service-card">
-      <span class="service-icon">🌿</span>
-      <div class="service-name">Yard Tidy-Up</div>
-      <div class="service-desc">Raking, weeding, and general yard cleanup to keep your property looking its best between professional visits.</div>
-      <div class="service-price">From $20/visit</div>
-    </div>
+
+
   </div>
 </section>
 
@@ -477,48 +645,184 @@
 <section id="pricing">
   <div class="section-label">No Surprises</div>
   <div class="section-title">Simple Pricing</div>
-  <table class="pricing-table">
-    <thead>
-      <tr>
-        <th>Service</th>
-        <th>Details</th>
-        <th>Price</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Driveway (standard)</td>
-        <td>Up to 600 sq ft, clean concrete</td>
-        <td>$40 - $50</td>
-      </tr>
-      <tr>
-        <td>Driveway (heavy mildew)</td>
-        <td>Mildew or algae removal</td>
-        <td>$55 - $75</td>
-      </tr>
-      <tr>
-        <td>Patio / Back Porch</td>
-        <td>Per square foot</td>
-        <td>$0.20 - $0.25/sq ft</td>
-      </tr>
-      <tr>
-        <td>Walkway + Front Sidewalk</td>
-        <td>Entry walk to front door</td>
-        <td>$20 - $30</td>
-      </tr>
-      <tr>
-        <td>Full Front Bundle</td>
-        <td>Driveway + walkway + sidewalk</td>
-        <td>$55 - $70</td>
-      </tr>
-      <tr>
-        <td>Trash Can Cleaning</td>
-        <td>Per can, monthly available</td>
-        <td>$15 - $20/can</td>
-      </tr>
-    </tbody>
-  </table>
-  <p class="pricing-note">Not sure what you need? Text or call for a free estimate. We'll take a look and give you a straight number before any work starts.</p>
+
+  <!-- Base rate bar -->
+  <div class="rate-bar">
+    <div class="rate-card">
+      <div class="rate-label">Standard Rate</div>
+      <div class="rate-amount">$0.30<span style="font-size:1.2rem">/sq ft</span></div>
+      <div class="rate-desc">Clean concrete with no significant buildup. All driveways, patios, walkways, and sidewalks.</div>
+    </div>
+    <div class="rate-card light">
+      <div class="rate-label">Mildew / Heavy Buildup</div>
+      <div class="rate-amount">$0.38<span style="font-size:1.2rem">/sq ft</span></div>
+      <div class="rate-desc">Surfaces with mildew, algae, or heavy staining that require extra passes and dwell time.</div>
+    </div>
+    <div class="rate-card">
+      <div class="rate-label">Trash Can Cleaning</div>
+      <div class="rate-amount">$30<span style="font-size:1.2rem">/can</span></div>
+      <div class="rate-desc">Deep clean and deodorize. Monthly recurring service available.</div>
+    </div>
+  </div>
+
+  <!-- Pricing tables -->
+  <div class="pricing-groups">
+    <div>
+      <div class="pricing-group-title">Driveways</div>
+      <table class="pricing-table">
+        <thead>
+          <tr>
+            <th>Size</th>
+            <th>Sq Ft</th>
+            <th>Standard</th>
+            <th>Mildew</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Single car</td>
+            <td class="size-col">~400 sq ft</td>
+            <td class="price-col">$120</td>
+            <td class="mildew-col">$150</td>
+          </tr>
+          <tr>
+            <td>Two-car</td>
+            <td class="size-col">~600 sq ft</td>
+            <td class="price-col">$180</td>
+            <td class="mildew-col">$225</td>
+          </tr>
+          <tr>
+            <td>Large</td>
+            <td class="size-col">~900 sq ft</td>
+            <td class="price-col">$270</td>
+            <td class="mildew-col">$340</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div>
+      <div class="pricing-group-title">Patios &amp; Back Porches</div>
+      <table class="pricing-table">
+        <thead>
+          <tr>
+            <th>Size</th>
+            <th>Sq Ft</th>
+            <th>Standard</th>
+            <th>Mildew</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Small</td>
+            <td class="size-col">~200 sq ft</td>
+            <td class="price-col">$60</td>
+            <td class="mildew-col">$76</td>
+          </tr>
+          <tr>
+            <td>Medium</td>
+            <td class="size-col">~350 sq ft</td>
+            <td class="price-col">$105</td>
+            <td class="mildew-col">$133</td>
+          </tr>
+          <tr>
+            <td>Large</td>
+            <td class="size-col">~500 sq ft</td>
+            <td class="price-col">$150</td>
+            <td class="mildew-col">$190</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div>
+      <div class="pricing-group-title">Walkways &amp; Sidewalks</div>
+      <table class="pricing-table">
+        <thead>
+          <tr>
+            <th>Surface</th>
+            <th>Sq Ft</th>
+            <th>Standard</th>
+            <th>Mildew</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Front walk to door</td>
+            <td class="size-col">~80 sq ft</td>
+            <td class="price-col">$25</td>
+            <td class="mildew-col">$32</td>
+          </tr>
+          <tr>
+            <td>Front sidewalk</td>
+            <td class="size-col">~120 sq ft</td>
+            <td class="price-col">$36</td>
+            <td class="mildew-col">$46</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div>
+      <div class="pricing-group-title">Other Services</div>
+      <table class="pricing-table">
+        <thead>
+          <tr>
+            <th>Service</th>
+            <th>Details</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Trash can cleaning</td>
+            <td class="size-col">Per can</td>
+            <td class="price-col">$30</td>
+          </tr>
+
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Bundle box -->
+  <div class="bundle-box">
+    <div class="pricing-group-title">Bundle &amp; Save</div>
+    <ul class="bundle-list">
+      <li>
+        <span>Driveway + Front Walkway</span>
+        <span class="bundle-price">Save $10 <span class="bundle-save">off individual prices</span></span>
+      </li>
+      <li>
+        <span>Full Front — Driveway + Walkway + Sidewalk</span>
+        <span class="bundle-price">Save $15 <span class="bundle-save">off individual prices</span></span>
+      </li>
+      <li>
+        <span>Full Exterior — Driveway + Walkway + Sidewalk + Porch</span>
+        <span class="bundle-price">Save $25–$30 <span class="bundle-save">off individual prices</span></span>
+      </li>
+    </ul>
+  </div>
+
+  <p class="pricing-note">All prices are estimates based on typical sizes. Final price is calculated by actual square footage at $0.30/sq ft (standard) or $0.38/sq ft (mildew). Not sure? Text or call — we'll come take a look and give you a straight number before any work starts.</p>
+</section>
+
+<section id="testimonials">
+  <div class="testimonials-inner">
+    <div class="section-label">What Neighbors Are Saying</div>
+    <div class="section-title">Reviews</div>
+    <div class="testimonials-grid">
+
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">They really did a great job power washing and clean up!</p>
+        <div class="testimonial-author">— Neighbor, Marietta GA</div>
+      </div>
+
+    </div>
+    <p class="testimonial-note">Happy with your service? Post a review on <a href="https://nextdoor.com" target="_blank">Nextdoor</a> and help spread the word!</p>
+  </div>
 </section>
 
 <section id="contact">
